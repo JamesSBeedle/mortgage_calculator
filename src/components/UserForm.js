@@ -5,6 +5,7 @@ const UserForm = ({onFormSubmit}) => {
     const [name, setName] = useState("")
     const [salary, setSalary] = useState(0)
     const [secondSalary, setSecondSalary] = useState(0)
+   
 
     const handleNameChange = (evt) => {
         setName(evt.target.value);
@@ -24,10 +25,7 @@ const UserForm = ({onFormSubmit}) => {
         const salaryToSubmit = salary;
         const secondSalaryToSubmit = secondSalary;
         
-        // if (!secondSalary) {
-        //     setSecondSalary(0)
-        // }
-        
+         
         if (!nameToSubmit || !salaryToSubmit) {
             return
         }

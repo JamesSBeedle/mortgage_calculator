@@ -4,18 +4,17 @@ import {useState} from 'react'
 
 const MortgageContainer = () => {
 
-    const [userInformation, setUserInformation] = useState(null)
+    const [userInformation, setUserInformation] = useState()
 
     const addUserInfo = (submittedInfo) => {
-        const updatedInformation = [submittedInfo];
-        setUserInformation(updatedInformation);
+        setUserInformation(submittedInfo);
     }
 
     return(
         <>
             <h1>Mortgage Container</h1>
-            <UserForm onFormSubmit={(submittedInfo) => addUserInfo(submittedInfo)}/>
-            <MortgageDisplay/>
+            <UserForm onFormSubmit={addUserInfo}/>
+            <MortgageDisplay userInfo={userInformation}/>
         </>
     )
 }
