@@ -3,8 +3,10 @@ import {useState} from 'react'
 const UserForm = ({onFormSubmit}) => {
 
     const [name, setName] = useState("")
-    const [salary, setSalary] = useState(0)
-    const [secondSalary, setSecondSalary] = useState(0)
+    const [salary, setSalary] = useState("")
+    const [secondSalary, setSecondSalary] = useState("")
+    const [deposit, setDeposit] = useState("")
+    const [outgoings, setOutgoings] = useState("")
    
 
     const handleNameChange = (evt) => {
@@ -19,11 +21,21 @@ const UserForm = ({onFormSubmit}) => {
         setSecondSalary(evt.target.value);
     }
 
+    const handleDepositChange = (evt) => {
+        setDeposit(evt.target.value);
+    }
+
+    const handleOutgoingsChange = (evt) => {
+        setOutgoings(evt.target.value);
+    }
+
     const handleFormSubmit = (evt) => {
         evt.preventDefault();
         const nameToSubmit = name.trim();
         const salaryToSubmit = salary;
         const secondSalaryToSubmit = secondSalary;
+        const depositToSubmit = deposit;
+        const outgoingsToSubmit = outgoings;
         
          
         if (!nameToSubmit || !salaryToSubmit) {
@@ -33,12 +45,16 @@ const UserForm = ({onFormSubmit}) => {
         onFormSubmit({
             name: nameToSubmit,
             salary: salaryToSubmit,
-            secondSalary: secondSalaryToSubmit
+            secondSalary: secondSalaryToSubmit,
+            deposit: depositToSubmit,
+            outgoings: outgoingsToSubmit
         });
 
         setName("");
-        setSalary(0);
-        setSecondSalary(0);
+        setSalary("");
+        setSecondSalary("");
+        setDeposit("");
+        setOutgoings("");
     } 
 
     return(
@@ -54,7 +70,7 @@ const UserForm = ({onFormSubmit}) => {
                 onChange={handleNameChange}
                 required
             />
-
+            
             <label for="salary">Salary: </label>
             <input 
                 type="number" 
@@ -72,6 +88,25 @@ const UserForm = ({onFormSubmit}) => {
                 id="secondSalary" 
                 value={secondSalary} 
                 onChange={handleSecondSalaryChange}
+            />
+
+
+            <label for="deposit">Deposit: </label>
+            <input 
+                type="number" 
+                placeholder="0" 
+                id="deposit" 
+                value={deposit} 
+                onChange={handleDepositChange}
+            />
+
+            <label for="outgoings">Outgoings: </label>
+            <input 
+                type="number" 
+                placeholder="0" 
+                id="outgoings" 
+                value={outgoings} 
+                onChange={handleOutgoingsChange}
             />
 
             <input
