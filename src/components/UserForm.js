@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import './Form.css'
 
 const UserForm = ({onFormSubmit}) => {
 
@@ -58,64 +59,96 @@ const UserForm = ({onFormSubmit}) => {
     } 
 
     return(
-        <>
-        <h2> Form</h2>
-        <form onSubmit={handleFormSubmit}>
-            <label for="name">Name: </label>
-            <input 
-                type="text" 
-                placeholder="Mark Burns" 
-                id="name" 
-                value={name} 
-                onChange={handleNameChange}
-                required
-            />
-            
-            <label for="salary">Salary: </label>
-            <input 
-                type="number" 
-                placeholder="0" 
-                id="salary" 
-                value={salary} 
-                onChange={handleSalaryChange}
-                required
-            />
+        <div id="form-container">
+            <section class="form-title">
+                <h2> Submission Form</h2>
+            </section>
 
-            <label for="secondSalary">Second Salary: </label>
-            <input 
-                type="number" 
-                placeholder="0" 
-                id="secondSalary" 
-                value={secondSalary} 
-                onChange={handleSecondSalaryChange}
-            />
+            <section >
+                <form onSubmit={handleFormSubmit} class="inner-form-container">
+                    <section >
+                        <label for="name" class="input-label">Name: </label>
+                    </section>  
+                    <section>   
+                        <input 
+                            type="text" 
+                            placeholder="Mark Burns" 
+                            id="name" 
+                            value={name} 
+                            onChange={handleNameChange}
+                            required
+                            class="input-box"
+                        />
+                    </section>
+                    <br/>
+                    <section>
+                        <label for="salary" class="input-label">Salary: </label>
+                    </section>
+                    <section>
+                        <input 
+                            type="number" 
+                            placeholder="0" 
+                            id="salary" 
+                            value={salary} 
+                            onChange={handleSalaryChange}
+                            required
+                            class="input-box"
+                        />
+                    </section>
+                    <br/>
+                    <section>
+                        <label for="secondSalary" class="input-label">Second Salary: </label>
+                    </section>
+                    <section>
+                        <input 
+                            type="number" 
+                            placeholder="0" 
+                            id="secondSalary" 
+                            value={secondSalary} 
+                            onChange={handleSecondSalaryChange}
+                            class="input-box"
+                        />
+                    </section>
+                    <br/>
+                    <section>
+                        <label for="deposit" class="input-label">Deposit: </label>
+                    </section>
+                    <section>
+                        <input 
+                            type="number" 
+                            placeholder="0" 
+                            id="deposit" 
+                            value={deposit} 
+                            onChange={handleDepositChange}
+                            class="input-box"
+                        />
+                    </section>
+                    <br/>
+                    <section>
+                        <label for="outgoings" class="input-label">Outgoings: </label>
+                    </section>
+                    <section>
+                        <input 
+                            type="number" 
+                            placeholder="0" 
+                            id="outgoings" 
+                            value={outgoings} 
+                            onChange={handleOutgoingsChange}
+                            class="input-box"
+                        />
+                    </section>
+                    <br/>
+                    <section>
+                        <input
+                            type="submit"
+                            value="Submit Salary Information"
+                            class="button"
+                        />
+                    </section>
+                </form>
+            </section>
 
-
-            <label for="deposit">Deposit: </label>
-            <input 
-                type="number" 
-                placeholder="0" 
-                id="deposit" 
-                value={deposit} 
-                onChange={handleDepositChange}
-            />
-
-            <label for="outgoings">Outgoings: </label>
-            <input 
-                type="number" 
-                placeholder="0" 
-                id="outgoings" 
-                value={outgoings} 
-                onChange={handleOutgoingsChange}
-            />
-
-            <input
-                type="submit"
-                value="Submit Salary Information"
-            />
-        </form>
-
-        </>
+        </div>
     )
 }
 

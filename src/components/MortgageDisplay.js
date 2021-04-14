@@ -8,7 +8,7 @@ const MortgageDisplay= ({userInfo}) => {
     
     return(
         <>
-        <h1>MortgageDisplay</h1>
+        <h1>Mortgage Information</h1>
         <h1>User Name: </h1>
         <h3>{userInfo.name}</h3>
         <h1>Salary:  </h1>
