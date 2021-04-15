@@ -1,5 +1,7 @@
-const MortgageDisplay= ({userInfo}) => {
+import './Display.css'
 
+const MortgageDisplay= ({userInfo}) => {
+    
     if (!userInfo) {
         return null
     }
